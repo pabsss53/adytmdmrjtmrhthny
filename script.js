@@ -1,7 +1,7 @@
 // Data portofolio dengan URL tujuan
 const portfolioData = [
   {
-    src: "Frame%201.pngg",
+    src: "Frame%201.png",
     alt: "Design 1",
     title: "SIGHTMENTED.ID",
     url: "sightmented.html"
