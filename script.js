@@ -1,3 +1,4 @@
+// Fade-in animation
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".item");
   items.forEach((item, index) => {
@@ -10,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150 * index);
   });
 
+  // Hamburger toggle
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
@@ -19,15 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.toggle("open");
     });
   }
-
-  document.querySelector(".bio h2").addEventListener("click", () => {
-    alert("Hai! Ini adalah portofolio Adyatma. Terima kasih sudah melihat :)");
-  });
-
-  generatePortfolio();
 });
 
-// === TAMBAH URL KE SETIAP PROJEK ===
+// Bio click alert
+document.addEventListener("DOMContentLoaded", () => {
+  const bioTitle = document.querySelector(".bio h2");
+  if (bioTitle) {
+    bioTitle.addEventListener("click", () => {
+      alert("Hai! Ini adalah portofolio Adyatma. Terima kasih sudah melihat :)");
+    });
+  }
+});
+
+// Data portofolio (gambar + judul + URL)
 const portfolioData = [
   {
     src: "IMG/Frame 1.png",
@@ -49,7 +55,7 @@ const portfolioData = [
   }
 ];
 
-// === FUNGSI UNTUK BUAT GRID OTOMATIS DAN BISA DIKLIK ===
+// Fungsi generate portfolio grid otomatis
 function generatePortfolio() {
   const gridContainer = document.querySelector(".grid");
   if (!gridContainer) return;
@@ -74,11 +80,16 @@ function generatePortfolio() {
     itemDiv.appendChild(img);
     itemDiv.appendChild(overlayDiv);
 
-    // === BUKA HALAMAN BARU SAAT ITEM DIKLIK ===
+    // ➕ Tambahkan link ke file HTML saat diklik
     itemDiv.addEventListener("click", () => {
-      window.open(item.url, "_blank"); // buka di tab baru
+      window.location.href = item.url;
     });
 
     gridContainer.appendChild(itemDiv);
   });
 }
+
+// Inisialisasi saat DOM siap
+document.addEventListener("DOMContentLoaded", () => {
+  generatePortfolio();
+});
