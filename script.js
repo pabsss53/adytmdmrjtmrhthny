@@ -1,4 +1,3 @@
-// Fade-in animation existing code
 document.addEventListener("DOMContentLoaded", () => {
   const items = document.querySelectorAll(".item");
   items.forEach((item, index) => {
@@ -11,35 +10,75 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 150 * index);
   });
 
-  // Hamburger toggle
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
-    navMenu.classList.toggle("open");
-  });
-});
-
-// Lightbox existing code
-document.querySelectorAll(".item img").forEach(img => {
-  img.addEventListener("click", () => {
-    const overlay = document.createElement("div");
-    overlay.className = "lightbox";
-    overlay.innerHTML = `
-      <div class="lightbox-content">
-        <img src="${img.src}" alt="Preview">
-      </div>
-    `;
-    document.body.appendChild(overlay);
-
-    overlay.addEventListener("click", () => {
-      document.body.removeChild(overlay);
+  if (hamburger && navMenu) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("open");
+      navMenu.classList.toggle("open");
     });
+  }
+
+  document.querySelector(".bio h2").addEventListener("click", () => {
+    alert("Hai! Ini adalah portofolio Adyatma. Terima kasih sudah melihat :)");
   });
+
+  generatePortfolio();
 });
 
-// Bio click alert existing code
-document.querySelector(".bio h2").addEventListener("click", () => {
-  alert("Hai! Ini adalah portofolio Adyatma. Terima kasih sudah melihat :)");
-});
+// === TAMBAH URL KE SETIAP PROJEK ===
+const portfolioData = [
+  {
+    src: "IMG/Frame 1.png",
+    alt: "Design 1",
+    title: "SIGHTMENTED.ID",
+    url: "sightmented.html"
+  },
+  {
+    src: "IMG/Frame 2.png",
+    alt: "Design 2",
+    title: "KOPILOAK",
+    url: "kopiloak.html"
+  },
+  {
+    src: "IMG/Frame 3.png",
+    alt: "Design 3",
+    title: "PORTEIGHT",
+    url: "porteight.html"
+  }
+];
+
+// === FUNGSI UNTUK BUAT GRID OTOMATIS DAN BISA DIKLIK ===
+function generatePortfolio() {
+  const gridContainer = document.querySelector(".grid");
+  if (!gridContainer) return;
+
+  gridContainer.innerHTML = "";
+
+  portfolioData.forEach(item => {
+    const itemDiv = document.createElement("div");
+    itemDiv.classList.add("item");
+
+    const img = document.createElement("img");
+    img.src = item.src;
+    img.alt = item.alt;
+
+    const overlayDiv = document.createElement("div");
+    overlayDiv.classList.add("overlay");
+
+    const h2 = document.createElement("h2");
+    h2.textContent = item.title;
+
+    overlayDiv.appendChild(h2);
+    itemDiv.appendChild(img);
+    itemDiv.appendChild(overlayDiv);
+
+    // === BUKA HALAMAN BARU SAAT ITEM DIKLIK ===
+    itemDiv.addEventListener("click", () => {
+      window.open(item.url, "_blank"); // buka di tab baru
+    });
+
+    gridContainer.appendChild(itemDiv);
+  });
+}
