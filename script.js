@@ -30,19 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
 // === TAMBAH URL KE SETIAP PROJEK ===
 const portfolioData = [
   {
-    src: "Frame 1.png",
+    src: "Frame%201.png",
     alt: "Design 1",
     title: "SIGHTMENTED.ID",
     url: "sightmented.html"
   },
   {
-    src: "Frame 2.png",
+    src: "Frame%202.png",
     alt: "Design 2",
     title: "KOPILOAK",
     url: "kopiloak.html"
   },
   {
-    src: "Frame 3.png",
+    src: "Frame%203.png",
     alt: "Design 3",
     title: "PORTEIGHT",
     url: "porteight.html"
