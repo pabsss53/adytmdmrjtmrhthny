@@ -20,6 +20,9 @@ const portfolioData = [
   }
 ];
 
+  }
+];
+
 // Fungsi generate grid portfolio otomatis
 function generatePortfolio() {
   const gridContainer = document.querySelector(".grid");
