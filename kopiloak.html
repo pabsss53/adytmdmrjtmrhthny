@@ -1,77 +1,176 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KOPILOAK</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kopiloak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #003366 ;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
     }
-
-    h1 {
-      text-align: center;
-      margin: 40px 0 20px;
-      font-size: 2.5em;
-      color: #FFFFFF;
+    body {
+      background: linear-gradient(to right, #7d6a42, #b8a16c);
+      color: #fff;
+      line-height: 1.6;
     }
-
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 0 20px 40px;
-      max-width: 1200px;
-      margin: 0 auto;
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: #00000033;
     }
-
-    .photo-card {
-      overflow: hidden;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-      background-color: #fff;
-      transition: transform 0.3s ease;
+    header h1 {
+      font-size: 1.5rem;
     }
-
-    .photo-card img {
-      width: 100%;
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1000x400') center/cover;
       height: 400px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
     }
-
-    .photo-card:hover img {
-      transform: scale(1.05);
+    .hero h2 {
+      font-size: 2rem;
+      background: rgba(0,0,0,0.6);
+      padding: 1rem;
+      border-radius: 10px;
+    }
+    .section {
+      padding: 3rem 2rem;
+      background-color: white;
+      color: black;
+    }
+    .section h2 {
+      margin-bottom: 1rem;
+      color: #7d6a42;
+    }
+    .products {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .product {
+      width: 200px;
+      margin: 1rem;
+      text-align: center;
+    }
+    .signature {
+      background-color: #f3e6c2;
+      padding: 2rem;
+    }
+    .signature h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .package {
+      margin: 2rem auto;
+      max-width: 600px;
+      background: #fff;
+      padding: 1rem;
+      color: #000;
+      border-radius: 10px;
+    }
+    .subscribe {
+      background: #fff;
+      color: #000;
+      padding: 2rem;
+      text-align: center;
+    }
+    .subscribe input {
+      padding: 0.5rem;
+      width: 200px;
+      margin: 0.5rem;
+    }
+    .subscribe button {
+      padding: 0.5rem 1rem;
+      background: #7d6a42;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.8rem;
+      background: #00000033;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>kopiloak.id</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#product">Products</a>
+      <a href="#package">Package</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <h1>KOPILOAK</h1>
+  <section class="hero">
+    <h2>kopiloak.id</h2>
+    <p>Your luxury coffee experience</p>
+  </section>
 
-  <div class="gallery-container">
-    <div class="photo-card">
-      <img src="Frame 95.png" alt="Foto 1">
-    </div>
-    <div class="photo-card">
-      <img src="Frame 96.png" alt="Foto 2">
-    </div>
-    <div class="photo-card">
-      <img src="Frame 97.png" alt="Foto 3">
-    </div>
-    <div class="photo-card">
-      <img src="Frame 99.png" alt="Foto 4">
-    </div>
-    <div class="photo-card">
-      <img src="Frame 100.png" alt="Foto 5">
-    </div>
-    <div class="photo-card">
-      <img src="Frame 98.png" alt="Foto 6">
-    </div>
-  </div>
+  <section class="section" id="origin">
+    <h2>Origin</h2>
+    <p>Kopi Luwak, also known as civet coffee, originates from Indonesia and is considered one of the rarest and most unique coffees in the world. Its story begins during the Dutch colonial period in the 18th century...</p>
+  </section>
 
+  <section class="section" id="product">
+    <h2>Product</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Kopiloak">
+        <p>Kopiloak</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Kopi Luwak Gula Aren">
+        <p>Kopi Luwak Gula Aren</p>
+      </div>
+      <div class="product">
+        <img src="https://via.placeholder.com/150" alt="Kopi Organik">
+        <p>Kopi Organik</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="signature" id="package">
+    <h2>Signature Packages</h2>
+    <div class="package">
+      <h3>Kopi Luwak Khas Kopiloak</h3>
+      <p>Kopiloak’s best traditional luwak coffee specially packed for your enjoyment. Authentic, rare, and exclusive.</p>
+    </div>
+    <div class="package">
+      <h3>Kopiloak Special Package</h3>
+      <p>Best value selection of our finest blends, comes with souvenirs and free delivery.</p>
+    </div>
+  </section>
+
+  <section class="subscribe">
+    <p>Treat yourself to a full week of excellence. Your luxury coffee ritual starts here with <strong>KOPILOAK</strong>.</p>
+    <input type="email" placeholder="Your Email">
+    <button>SUBSCRIBE</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Kopiloak - All Rights Reserved.</p>
+    <p>Contact | FAQ | About</p>
+  </footer>
 </body>
 </html>
+
