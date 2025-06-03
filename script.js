@@ -1,61 +1,26 @@
-// Fade-in animation
-document.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".item");
-  items.forEach((item, index) => {
-    item.style.opacity = 0;
-    item.style.transform = "translateY(20px)";
-    setTimeout(() => {
-      item.style.transition = "all 0.6s ease";
-      item.style.opacity = 1;
-      item.style.transform = "translateY(0)";
-    }, 150 * index);
-  });
-
-  // Hamburger toggle
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  if (hamburger && navMenu) {
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("open");
-      navMenu.classList.toggle("open");
-    });
-  }
-});
-
-// Bio click alert
-document.addEventListener("DOMContentLoaded", () => {
-  const bioTitle = document.querySelector(".bio h2");
-  if (bioTitle) {
-    bioTitle.addEventListener("click", () => {
-      alert("Hai! Ini adalah portofolio Adyatma. Terima kasih sudah melihat :)");
-    });
-  }
-});
-
-// Data portofolio (gambar + judul + URL)
+// Data portofolio dengan URL tujuan
 const portfolioData = [
   {
-    src: "Frame%201.png",
+    src: "Frame 1.png",
     alt: "Design 1",
     title: "SIGHTMENTED.ID",
     url: "sightmented.html"
   },
   {
-    src: "Frame%202.png",
+    src: "Frame 2.png",
     alt: "Design 2",
     title: "KOPILOAK",
     url: "kopiloak.html"
   },
   {
-    src: "Frame%203.png",
+    src: "Frame 3.png",
     alt: "Design 3",
     title: "PORTEIGHT",
     url: "porteight.html"
   }
 ];
 
-// Fungsi generate portfolio grid otomatis
+// Fungsi generate grid portfolio otomatis
 function generatePortfolio() {
   const gridContainer = document.querySelector(".grid");
   if (!gridContainer) return;
@@ -80,7 +45,7 @@ function generatePortfolio() {
     itemDiv.appendChild(img);
     itemDiv.appendChild(overlayDiv);
 
-    // ➕ Tambahkan link ke file HTML saat diklik
+    // Buka halaman HTML saat item diklik
     itemDiv.addEventListener("click", () => {
       window.location.href = item.url;
     });
@@ -89,7 +54,7 @@ function generatePortfolio() {
   });
 }
 
-// Inisialisasi saat DOM siap
+// Jalankan saat halaman sudah dimuat
 document.addEventListener("DOMContentLoaded", () => {
   generatePortfolio();
 });
